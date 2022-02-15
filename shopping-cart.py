@@ -75,9 +75,15 @@ while True:
 
 # compile receipt
 
+import time
+local_time = time.localtime()
+
+
+
 print(" ")
 print("FITZGERALD'S FINE FOODS")
 print("WWW.FITZGERALDS.COM")
+print(time.strftime('%a, %d %b %Y %H:%M:%S', local_time))
 print("----------------------")
 print(" ")
 
@@ -89,15 +95,17 @@ for x in purchased_items:
     subtotal = subtotal + x["price"]
 
 # Tax rate subject to change
-tax = 0.0635 * subtotal
+tax = 0.0875 * subtotal
 
 total = subtotal + tax
 
 print(" ")
 print("----------------------")
 print("....Subtotal:", "${:,.2f}".format(subtotal))
-print("....Tax:", "${:,.2f}".format(tax))
+print("....Tax (8.75%):", "${:,.2f}".format(tax))
 print("....Total:", "${:,.2f}".format(total))
+print(" ")
+print("Thank you for your business!")
 
 
 

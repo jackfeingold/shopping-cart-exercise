@@ -40,4 +40,34 @@ def to_usd(my_price):
 
 # TODO: write some Python code here to produce the desired output
 
-print(products)
+# print(products)
+
+
+
+# ask for user input
+
+purchases = []
+
+while True:
+    product_id = input('Please enter a product ID or "DONE": ')
+
+    if product_id == "DONE":
+        break
+    for x in products:
+       if str(x["id"]) == str(product_id):
+           purchases.append(x)
+
+#for x in purchases:
+ #   print(x.keys())
+# print(purchases)
+# print(product_id)
+
+# loop cooresponding products
+item_names = [x["name"] for x in purchases]
+item_prices = [x["price"] for x in purchases]
+
+print(item_names)
+print(item_prices)
+# compile receipt
+
+# print receipt

@@ -27,7 +27,11 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
+# input validation setup
 
+product_ids = []
+for x in products:
+    product_ids.append(str(x["id"]))
 
 
 
@@ -49,7 +53,8 @@ while True:
 
     # print product that has an id attribute equal to "9"
 
-    
+    if product_id not in product_ids:
+        print("Item not found.  Please ensure you have entered a valid ID.")
 
     for x in products:
         #if x == 3:
@@ -59,6 +64,7 @@ while True:
         if str(x["id"]) == str(product_id):
             # this is a match
             purchased_items.append(x)
+        
 
 #print(purchased_items)
 

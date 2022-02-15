@@ -1,6 +1,1 @@
-### Use pip to install the following:
-
-math
-
-time
 

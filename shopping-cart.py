@@ -1,4 +1,4 @@
-# shopping_cart.py
+# shopping-cart.py
 # code for Jack Feingold OPIM 243
 
 from math import prod

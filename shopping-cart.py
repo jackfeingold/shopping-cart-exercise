@@ -39,8 +39,8 @@ purchased_items = []
 
 while True:
     product_id = input("Please input a product identifier or 'DONE': ")
-    print(product_id) #> "9"
-    print(type(product_id)) #> str
+    #print(product_id) #> "9"
+    #print(type(product_id)) #> str
 
     if product_id == "DONE":
         break
@@ -60,14 +60,22 @@ while True:
             # this is a match
             purchased_items.append(x)
 
-print(purchased_items)
+#print(purchased_items)
 
-for x in purchased_items:
-    print(x.keys())
+#for x in purchased_items:
+#    print(x.keys())
 
 # loop cooresponding products
 
 # compile receipt
+
+print(" ")
+print("FITZGERALD'S FINE FOODS")
+print("WWW.FITZGERALDS.COM")
+print("----------------------")
+print(" ")
+
+
 subtotal = 0
 
 for x in purchased_items:
@@ -79,8 +87,9 @@ tax = 0.0635 * subtotal
 
 total = subtotal + tax
 
+print(" ")
+print("----------------------")
 print("....Subtotal:", "${:,.2f}".format(subtotal))
-#print("....Subtotal:", "$" + str(round(subtotal, 2)))
 print("....Tax:", "${:,.2f}".format(tax))
 print("....Total:", "${:,.2f}".format(total))
 

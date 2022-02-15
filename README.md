@@ -15,7 +15,7 @@ You should create a virtual environment to run the program in on your computer.
 Enter the following from the command line to create the environment:
 
 ``` sh
-conda create -n shopping-env python-3.8
+conda create -n shopping-env python=3.8
 ```
 
 Once you have created the environment, activate it as follows:

@@ -71,16 +71,18 @@ for x in purchased_items:
 subtotal = 0
 
 for x in purchased_items:
-    print("...." + x["name"], "$" + str(x["price"]))
+    print("...." + x["name"], "${:,.2f}".format(x["price"]))
     subtotal = subtotal + x["price"]
 
+# Tax rate subject to change
 tax = 0.0635 * subtotal
 
 total = subtotal + tax
 
-print("....Subtotal:", "$" + str(round(subtotal, 2)))
-print("....Tax:", "$" + str(round(tax, 2)))
-print("....Total:", "$" + str(round(total, 2)))
+print("....Subtotal:", "${:,.2f}".format(subtotal))
+#print("....Subtotal:", "$" + str(round(subtotal, 2)))
+print("....Tax:", "${:,.2f}".format(tax))
+print("....Total:", "${:,.2f}".format(total))
 
 
 

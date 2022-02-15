@@ -1,6 +1,9 @@
 # shopping_cart.py
 # code for Jack Feingold OPIM 243
 
+from math import prod
+
+
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -25,49 +28,63 @@ products = [
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
 
-def to_usd(my_price):
-    """
-    Converts a numeric value to usd-formatted string, for printing and display purposes.
-
-    Param: my_price (int or float) like 4000.444444
-
-    Example: to_usd(4000.444444)
-
-    Returns: $4,000.44
-    """
-    return f"${my_price:,.2f}" #> $12,000.71
-
-
-# TODO: write some Python code here to produce the desired output
-
-# print(products)
 
 
 
 # ask for user input
 
-purchases = []
+# ASK FOR USER INPUT
+
+purchased_items = []
 
 while True:
-    product_id = input('Please enter a product ID or "DONE": ')
+    product_id = input("Please input a product identifier or 'DONE': ")
+    print(product_id) #> "9"
+    print(type(product_id)) #> str
 
     if product_id == "DONE":
         break
-    for x in products:
-       if str(x["id"]) == str(product_id):
-           purchases.append(x)
+    
+    # LOOK UP CORRESPONDING PRODUCTS
 
-#for x in purchases:
- #   print(x.keys())
-# print(purchases)
-# print(product_id)
+    # print product that has an id attribute equal to "9"
+
+    
+
+    for x in products:
+        #if x == 3:
+        #    ___.append(x)
+        #print(x)
+        #print(x["id"])
+        if str(x["id"]) == str(product_id):
+            # this is a match
+            purchased_items.append(x)
+
+print(purchased_items)
+
+for x in purchased_items:
+    print(x.keys())
 
 # loop cooresponding products
-item_names = [x["name"] for x in purchases]
-item_prices = [x["price"] for x in purchases]
 
-print(item_names)
-print(item_prices)
 # compile receipt
+subtotal = 0
+
+for x in purchased_items:
+    print("...." + x["name"], "$" + str(x["price"]))
+    subtotal = subtotal + x["price"]
+
+tax = 0.0635 * subtotal
+
+total = subtotal + tax
+
+print("....Subtotal:", "$" + str(round(subtotal, 2)))
+print("....Tax:", "$" + str(round(tax, 2)))
+print("....Total:", "$" + str(round(total, 2)))
+
+
+
+
+
 
 # print receipt

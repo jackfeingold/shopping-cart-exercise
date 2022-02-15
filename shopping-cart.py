@@ -29,6 +29,7 @@ products = [
 
 # input validation setup
 
+# a list of all available product IDs will allow the program to quickly check valid inputs
 product_ids = []
 for x in products:
     product_ids.append(str(x["id"]))
@@ -37,49 +38,33 @@ for x in products:
 
 # ask for user input
 
-# ASK FOR USER INPUT
-
+# inputs will be added to a list which will later be used
 purchased_items = []
 
 while True:
     product_id = input("Please input a product identifier or 'DONE': ")
-    #print(product_id) #> "9"
-    #print(type(product_id)) #> str
 
     if product_id == "DONE":
         break
     
-    # LOOK UP CORRESPONDING PRODUCTS
-
-    # print product that has an id attribute equal to "9"
-
+    # checks validity of input and alerts user if something other than an accepted input has been entered
     if product_id not in product_ids:
-        print("Item not found.  Please ensure you have entered a valid ID.")
+        print("Item not found.  Please ensure you have entered a valid ID and do not use punctuation.")
 
+    # adds the appropriate product to the list of purchases
     for x in products:
-        #if x == 3:
-        #    ___.append(x)
-        #print(x)
-        #print(x["id"])
         if str(x["id"]) == str(product_id):
-            # this is a match
             purchased_items.append(x)
         
 
-#print(purchased_items)
-
-#for x in purchased_items:
-#    print(x.keys())
-
-# loop cooresponding products
-
 # compile receipt
 
+# create date and time to print on receipt
 import time
 local_time = time.localtime()
 
 
-
+# heading of receipt displaying name of store, website, and date and time
 print(" ")
 print("FITZGERALD'S FINE FOODS")
 print("WWW.FITZGERALDS.COM")
@@ -88,17 +73,22 @@ print("----------------------")
 print(" ")
 
 
+# a running subtotal will be calculated as the names and prices of items are printed out
 subtotal = 0
 
+# prints the name of the item and the price formatted as $0.00 and adds each item to the subtotal
 for x in purchased_items:
     print("...." + x["name"], "${:,.2f}".format(x["price"]))
     subtotal = subtotal + x["price"]
 
-# Tax rate subject to change
+# calculates tax based on 8.75% tax rate
 tax = 0.0875 * subtotal
 
+# total is simply the subtotal plus the taxes calculated above
 total = subtotal + tax
 
+# some formatting and the subtotal, taxes, and total printed in $0.00 format
+# thank you message thanking the customer for their business
 print(" ")
 print("----------------------")
 print("....Subtotal:", "${:,.2f}".format(subtotal))
@@ -108,8 +98,3 @@ print(" ")
 print("Thank you for your business!")
 
 
-
-
-
-
-# print receipt

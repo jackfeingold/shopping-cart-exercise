@@ -44,6 +44,7 @@ purchased_items = []
 while True:
     product_id = input("Please input a product identifier or 'DONE': ")
 
+    # breaks input loop if user enters the DONE keyword
     if product_id == "DONE":
         break
     

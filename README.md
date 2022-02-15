@@ -37,3 +37,9 @@ Once within the virtual environment and using the directory of the program, use 
 ```sh
 python shopping-cart.py
 ```
+
+When you are finished using the program, deactivate the virtual environment using the following:
+
+```sh
+conda deactivate
+```

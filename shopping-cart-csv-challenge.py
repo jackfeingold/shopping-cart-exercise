@@ -42,7 +42,6 @@ if new_data == "y" or new_data == "Y":
     #    print(x.keys())
 
 
-
 # input validation setup
 # a list of all available product IDs will allow the program to quickly check valid inputs
 product_ids = []
@@ -50,9 +49,7 @@ for x in products:
     product_ids.append(str(x["id"]))
 
 
-
 # ask for user input
-
 # inputs will be added to a list which will later be used
 purchased_items = []
 

@@ -33,7 +33,7 @@ products = [
 new_data = input("Update product data from CSV? This will overwrite existing product list. Enter y or n: ")
 
 if new_data == "y" or new_data == "Y":
-    filepath = input("Enter the filepath of the products file you would like to use: ")
+    filepath = input("Enter the filepath of the products file you would like to use.  MUST BE CSV: ")
     file_import = read_csv(filepath)
     products = file_import.to_dict("records")
     #for x in products:

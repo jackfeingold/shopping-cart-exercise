@@ -29,9 +29,11 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
-
+# user will have the opportunity to update products every time the file is run
 new_data = input("Update product data from CSV? This will overwrite existing product list. Enter y or n: ")
 
+# program allows user to enter filepath, allowing file to be stored anywhere on any computer so long as the user can navigate the file explorer
+# use read_csv and DataFrame from pandas to read csv and write to dictionary
 if new_data == "y" or new_data == "Y":
     filepath = input("Enter the filepath of the products file you would like to use.  MUST BE CSV: ")
     file_import = read_csv(filepath)

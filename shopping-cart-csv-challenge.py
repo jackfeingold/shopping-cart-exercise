@@ -43,9 +43,6 @@ if new_data == "y" or new_data == "Y":
 
 
 
-
-
-
 # input validation setup
 # a list of all available product IDs will allow the program to quickly check valid inputs
 product_ids = []

@@ -27,7 +27,7 @@ conda activate shopping-env
 Navigate to the location of the program using the following commands:
 
 ```sh
-cd ~/
+cd ~/myfilepath
 ```
 After the slash, type the file path of where the program is saved.
 

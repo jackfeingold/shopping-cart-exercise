@@ -6,7 +6,8 @@ from math import prod
 from pandas import read_csv
 from pandas import DataFrame
 
-products = [
+# default list will be used depending on user inputs below
+default_products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
     {"id":3, "name": "Robust Golden Unsweetened Oolong Tea", "department": "beverages", "aisle": "tea", "price": 2.49},
@@ -46,11 +47,17 @@ if new_data == "y" or new_data == "Y":
             #for x in products:
             #    print(x.keys())
         except:
-            print("There was an error. Please ensure you have typed the file path correctly.")
+            print("There was an error. Please ensure you have typed the file path correctly and load only a csv file.")
             retry = input("If you would like to try again, please type 'y'.  Any other input will end data input.: ")
+            
+            # ensures the product list is not contaminated by partial completion of something above and exits loop
             if retry != "y":
                 switch = False
+                products = default_products
 
+# result of user choice not to update the product list
+else:
+    products = default_products
 
 # input validation setup
 # a list of all available product IDs will allow the program to quickly check valid inputs

@@ -34,12 +34,22 @@ new_data = input("Update product data from CSV? This will overwrite existing pro
 
 # program allows user to enter filepath, allowing file to be stored anywhere on any computer so long as the user can navigate the file explorer
 # use read_csv and DataFrame from pandas to read csv and write to dictionary
+
 if new_data == "y" or new_data == "Y":
-    filepath = input("Enter the filepath of the products file you would like to use.  MUST BE CSV: ")
-    file_import = read_csv(filepath)
-    products = file_import.to_dict("records")
-    #for x in products:
-    #    print(x.keys())
+    switch = True
+    while switch == True:
+        try:
+            filepath = input("Enter the filepath of the products file you would like to use.  MUST BE CSV: ")
+            file_import = read_csv(filepath)
+            products = file_import.to_dict("records")
+            switch = False
+            #for x in products:
+            #    print(x.keys())
+        except:
+            print("There was an error. Please ensure you have typed the file path correctly.")
+            retry = input("If you would like to try again, please type 'y'.  Any other input will end data input.: ")
+            if retry != "y":
+                switch = False
 
 
 # input validation setup

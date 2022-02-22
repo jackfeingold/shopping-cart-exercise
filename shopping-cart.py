@@ -126,6 +126,6 @@ print("....Tax (8.75%):", "${:,.2f}".format(tax))
 print("....Total:", "${:,.2f}".format(total))
 print(" ")
 print("Thank you for your business!")
-
+print(" ")
 
 
